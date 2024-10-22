@@ -2,7 +2,7 @@
     <!-- Formulario para agregar tarea -->
     <div class="col-12 mb-3">
         <input type="text" wire:model="newTaskTitle" class="form-control" placeholder="Add new task">
-        <button wire:click="addTask" class="btn btn-primary mt-2">Add Task</button>
+        <button wire:click="addTask" class="btn btn-bd-primary mt-2">Add Task</button>
         <!-- Mostrar errores si el título de la tarea no es válido -->
         @error('newTaskTitle') <span class="text-danger">{{ $message }}</span> @enderror
     </div>
@@ -16,7 +16,7 @@
                     <div class="card mb-2">
                         <div class="card-body d-flex justify-content-between align-items-center">
                             <span>{{ $task->title }}</span>
-                            <button wire:click="updateTaskStatus({{ $task->id }}, 'in-progress')" class="btn btn-sm btn-outline-primary">Start</button>
+                            <button wire:click="updateTaskStatus({{ $task->id }}, 'in-progress')" class="btn-bd-primary">Start</button>
                         </div>
                     </div>
                 @endforeach

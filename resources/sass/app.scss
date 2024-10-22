@@ -1,7 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
-
-// PARTIALS
+// CSS
+@import '../css/_reset.css';
+// PARTIALS SCSS
 @import 'custom';
 @import 'variables';
 @import 'task';
 @import 'taskboard';
+@import 'btn';
+
+
