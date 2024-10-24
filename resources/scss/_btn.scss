@@ -1,0 +1,24 @@
+.btn-primary {
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-indigo);
+  --bs-btn-bg: var(--bs-white);
+  --bs-btn-border-color: var(--bs-indigo);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #{shade-color(var(--bs-indigo)t, 10%)};
+  --bs-btn-hover-border-color: #{shade-color(var(--bs-indigo)t, 10%)};
+  --bs-btn-focus-shadow-rgb: none;
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #{shade-color(var(--bs-indigo)t, 20%)};
+  --bs-btn-active-border-color: #{shade-color(var(--bs-indigo)t, 20%)};
+
+  // Estilos anidados para el botón en diferentes estados
+  &:hover, &:active {
+    color: var(--bs-white);
+    background-color: var(--bs-indigo);
+    border-color: var(--bs-indigo)
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}

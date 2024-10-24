@@ -16,3 +16,8 @@ h4 {
 p {
     text-wrap: pretty;
 }
+.btn-i-primary {
+    background-color: var(--bs-indigo);
+    color: white;
+}
+  
