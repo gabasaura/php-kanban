@@ -4,7 +4,10 @@
         <input type="text" wire:model="newTaskTitle" class="form-control" placeholder="Add new task">
         <button wire:click="addTask" class="btn btn-primary mt-2">Add Task</button>
         <!-- Mostrar errores si el título de la tarea no es válido -->
-        @error('newTaskTitle') <span class="text-danger">{{ $message }}</span> @enderror
+        @error('newTaskTitle') <div class="alert alert-warning" role="alert">
+        {{ $message }}
+</div>
+ @enderror
     </div>
 
     <!-- Columna de tareas pendientes -->
@@ -13,12 +16,12 @@
         <div class="card bg-light">
             <div class="card-body">
                 @foreach($tasks->where('status', 'pending') as $task)
-                    <div class="card mb-2">
-                        <div class="card-body d-flex justify-content-between align-items-center">
-                            <span>{{ $task->title }}</span>
-                            <button wire:click="updateTaskStatus({{ $task->id }}, 'in-progress')" class="btn-bd-primary">Start</button>
-                        </div>
+                <div class="card mb-2">
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <span>{{ $task->title }}</span> <!-- Accessing property correctly -->
+                        <button wire:click="updateTaskStatus({{ $task->id }}, 'in-progress')" class="btn-bd-primary">Start</button>
                     </div>
+                </div>
                 @endforeach
             </div>
         </div>
@@ -30,12 +33,12 @@
         <div class="card bg-light">
             <div class="card-body">
                 @foreach($tasks->where('status', 'in-progress') as $task)
-                    <div class="card mb-2">
-                        <div class="card-body d-flex justify-content-between align-items-center">
-                            <span>{{ $task->title }}</span>
-                            <button wire:click="updateTaskStatus({{ $task->id }}, 'completed')" class="btn btn-sm btn-outline-success">Complete</button>
-                        </div>
+                <div class="card mb-2">
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <span>{{ $task->title }}</span>
+                        <button wire:click="updateTaskStatus({{ $task->id }}, 'completed')" class="btn btn-sm btn-outline-success">Complete</button>
                     </div>
+                </div>
                 @endforeach
             </div>
         </div>
@@ -47,11 +50,11 @@
         <div class="card bg-light">
             <div class="card-body">
                 @foreach($tasks->where('status', 'completed') as $task)
-                    <div class="card mb-2">
-                        <div class="card-body">
-                            <span>{{ $task->title }}</span>
-                        </div>
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <span>{{ $task->title }}</span>
                     </div>
+                </div>
                 @endforeach
             </div>
         </div>
