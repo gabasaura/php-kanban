@@ -10,7 +10,7 @@
 <body>
     <div class="container mt-5">
         <h1>Kanban Task Board</h1>
-        <livewire:task-board />
+        <livewire:kanban-board />
     </div>
     @livewireScripts
 </body>
